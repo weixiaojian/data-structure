@@ -53,6 +53,22 @@ public class Array<E> {
     }
 
     /**
+     * 获取第一个元素
+     * @return
+     */
+    public E getFirst(){
+        return get(0);
+    }
+
+    /**
+     * 获取最后一个元素
+     * @return
+     */
+    public E getLast(){
+        return get(size - 1);
+    }
+
+    /**
      * 获取指定位置元素
      * @param index
      * @return
@@ -187,7 +203,8 @@ public class Array<E> {
         size --;
         //loitering objects
         data[size] = null;
-        if(size == data.length/2){
+        //Lazy：data.length/4
+        if(size == data.length/4 && data.length/2 != 0){
             resize(data.length/2);
         }
         return result;
