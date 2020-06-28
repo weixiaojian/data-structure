@@ -5,7 +5,7 @@ import io.imwj.array.Array;
 /**
  * 自定义栈的实现
  * 基于动态数组实现
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 11:26
  */
 public class ArrayStack<E> implements Stack<E>{

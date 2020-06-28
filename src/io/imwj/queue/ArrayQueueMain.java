@@ -1,7 +1,7 @@
 package io.imwj.queue;
 
 /**
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 15:41
  */
 public class ArrayQueueMain {

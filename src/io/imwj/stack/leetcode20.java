@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * leetcode20号题：有效的括号
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 11:46
  */
 public class leetcode20 {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 自定义动态数组
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-19 15:34
  */
 public class Array<E> {

@@ -2,7 +2,7 @@ package io.imwj.stack;
 
 /**
  * 实现自定义栈的接口
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 11:19
  */
 public interface Stack<E> {

@@ -2,7 +2,7 @@ package io.imwj.stack;
 
 /**
  * ArrayStack测试
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 11:35
  */
 public class ArrayStackMain {
