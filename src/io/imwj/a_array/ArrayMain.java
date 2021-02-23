@@ -2,7 +2,7 @@ package io.imwj.a_array;
 
 /**
  * 数组操作类
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-19 15:23
  */
 public class ArrayMain {

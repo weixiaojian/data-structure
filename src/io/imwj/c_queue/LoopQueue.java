@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * 自定义循环队列的实现
  * 基于动态数组实现
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 16:03
  */
 public class LoopQueue<E> implements Queue<E> {

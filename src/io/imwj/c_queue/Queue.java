@@ -2,7 +2,7 @@ package io.imwj.c_queue;
 
 /**
  * 实现自定义队列的接口
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 15:32
  */
 public interface Queue<E> {

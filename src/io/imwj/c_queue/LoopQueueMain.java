@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 循环队列测试
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 16:28
  */
 public class LoopQueueMain {

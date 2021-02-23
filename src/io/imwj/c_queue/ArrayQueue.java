@@ -5,7 +5,7 @@ import io.imwj.a_array.Array;
 /**
  * 自定义数组队列的实现
  * 基于动态数组实现
- * @author langao_q
+ * @author LANGAO
  * @create 2020-05-20 15:35
  */
 public class ArrayQueue<E> implements Queue<E>{
