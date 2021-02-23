@@ -1,14 +1,14 @@
-package io.imwj.stack;
+package io.imwj.c_queue;
 
-import io.imwj.array.Array;
+import io.imwj.a_array.Array;
 
 /**
- * 自定义栈的实现
+ * 自定义数组队列的实现
  * 基于动态数组实现
  * @author langao_q
- * @create 2020-05-20 11:26
+ * @create 2020-05-20 15:35
  */
-public class ArrayStack<E> implements Stack<E>{
+public class ArrayQueue<E> implements Queue<E>{
 
     private Array<E> array;
 
@@ -16,30 +16,30 @@ public class ArrayStack<E> implements Stack<E>{
      * 自定义长度的
      * @param capacity
      */
-    public ArrayStack(int capacity){
+    public ArrayQueue(int capacity){
         array = new Array<>(capacity);
     }
 
     /**
      * 使用默认长度的
      */
-    public ArrayStack(){
+    public ArrayQueue(){
         array = new Array<>();
     }
 
     @Override
-    public void push(E e) {
+    public void enqueue(E e) {
         array.addLast(e);
     }
 
     @Override
-    public E pop() {
-        return array.removeLast();
+    public E dequeue() {
+        return array.removeFirst();
     }
 
     @Override
-    public E peek() {
-        return array.getLast();
+    public E getFront() {
+        return array.getFirst();
     }
 
     @Override
@@ -52,16 +52,8 @@ public class ArrayStack<E> implements Stack<E>{
         return array.isEmpty();
     }
 
-    /**
-     * 获取栈的容量
-     * @return
-     */
-    public int getCapacity(){
-        return array.getCapacity();
-    }
-
     @Override
     public String toString() {
-        return  array + " >>> top ";
+        return  "top<<< " + array + " <<<tail";
     }
 }

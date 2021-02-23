@@ -1,4 +1,4 @@
-package io.imwj.array;
+package io.imwj.a_array;
 
 import java.util.Arrays;
 

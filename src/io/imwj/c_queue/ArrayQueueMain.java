@@ -1,4 +1,4 @@
-package io.imwj.queue;
+package io.imwj.c_queue;
 
 /**
  * @author langao_q

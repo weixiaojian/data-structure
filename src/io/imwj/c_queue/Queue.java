@@ -1,4 +1,4 @@
-package io.imwj.queue;
+package io.imwj.c_queue;
 
 /**
  * 实现自定义队列的接口

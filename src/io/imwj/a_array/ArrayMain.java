@@ -1,6 +1,4 @@
-package io.imwj.array;
-
-import java.util.stream.Stream;
+package io.imwj.a_array;
 
 /**
  * 数组操作类
