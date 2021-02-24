@@ -1,4 +1,4 @@
-package io.imwj.b_stack;
+package io.imwj.base;
 
 /**
  * 实现自定义栈的接口

@@ -6,7 +6,6 @@ package io.imwj.d_LinkedList;
  */
 public class LinkedList<E> {
 
-
     /**
      * 使用虚拟头节点
      */
@@ -203,6 +202,4 @@ public class LinkedList<E> {
         }
         return str.toString();
     }
-
-
 }

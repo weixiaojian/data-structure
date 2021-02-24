@@ -16,7 +16,7 @@ public class LoopQueueMain {
     /**
      * 测试使用q运行opCount个enqueueu和dequeue操作所需要的时间，单位：秒
      */
-    private static double testQueue(Queue<Integer> q, int opCount) throws Exception {
+    public static double testQueue(Queue<Integer> q, int opCount) throws Exception {
 
         long startTime = System.nanoTime();
 

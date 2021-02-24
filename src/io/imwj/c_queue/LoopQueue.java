@@ -1,6 +1,5 @@
 package io.imwj.c_queue;
 
-import org.omg.CORBA.Object;
 
 import java.util.Arrays;
 
