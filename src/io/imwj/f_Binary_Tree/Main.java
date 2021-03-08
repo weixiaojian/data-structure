@@ -12,14 +12,46 @@ public class Main {
         for(Integer num : nums){
            b.add(num);
         }
+
+        //              5
+        //      3               6
+        //  2       4               8
+
         //5 3 2 6 4 8
-        b.preOrder();
+        //b.preOrder();
 
         //2 3 4 5 6 8
-        b.inOrder();
+        //b.inOrder();
 
         //2 4 3 8 6 5
-        b.psotOrder();
+        //b.psotOrder();
+
+        //5 3 6 2 4 8
+        //b.levelOrder();
+
+        //2---8
+        //Integer minnum = b.minnum();
+        //Integer maxxum = b.maxxum();
+        //System.out.println(minnum + "---" + maxxum);
+
+        Integer removeMin = b.removeMin();
+        System.out.println(removeMin);
+
+        removeMin = b.removeMin();
+        System.out.println(removeMin);
+
+        removeMin = b.removeMin();
+        System.out.println(removeMin);
+
+        removeMin = b.removeMin();
+        System.out.println(removeMin);
+
+        removeMin = b.removeMin();
+        System.out.println(removeMin);
+
+        removeMin = b.removeMin();
+        System.out.println(removeMin);
+
     }
 
 }
