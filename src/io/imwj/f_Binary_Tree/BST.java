@@ -240,12 +240,145 @@ public class BST<E extends Comparable<E>> {
     private Node removeMinByRecursive(Node node) {
         if(node.left == null){
             Node rightNode = node.right;
-            node.left = null;
+            node.right = null;
             size --;
             return rightNode;
         }
         node.left = removeMinByRecursive(node.left);
         return node;
+    }
+
+    /**
+     * 删除最大元素
+     * @return
+     */
+    public E  removeMax(){
+        E ret = maxxum();
+        root = removeMaxByRecursive(root);
+        return ret;
+    }
+
+    /**
+     * 递归删除最大元素  返回删除元素后的根
+     * @param node
+     */
+    private Node removeMaxByRecursive(Node node) {
+        if(node.right == null){
+            Node leftNode = node.left;
+            node.left = null;
+            size --;
+            return leftNode;
+        }
+        node.right = removeMaxByRecursive(node.right);
+        return node;
+    }
+
+    /**
+     * 删除任意元素
+     * 删除只有左子数 或 只有右子树的节点很简单：直接同上删除最小元素或最大元素即可
+     * 删除有左右字数的：先找到节点的后继值s=min(d -> right) 即当前节点的右子树的最小节点
+     *                  把后继值替换掉要删除的元素即可
+     * @param e
+     * @return
+     */
+    public void remove(E e){
+        root = removeByRecursive(root, e);
+    }
+
+    /**
+     * 递归删除任意元素
+     * 返回删除元素的根
+     * @param node
+     * @param e
+     * @return
+     */
+    private Node removeByRecursive(Node node, E e) {
+        if(node == null){
+            return null;
+        }
+        //删除左子树
+        if(e.compareTo((E) node.e) < 0){
+            node.left = removeByRecursive(node.left, e);
+            return node;
+        }
+        //删除右子树
+        if(e.compareTo((E) node.e) > 0){
+            node.right = removeByRecursive(node.right, e);
+            return node;
+        }
+        //删除当前元素
+        else {
+            //待删除节点左子树为空的情况
+            if(node.left == null){
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+            //待删除节点右子树为空的情况
+            if(node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+            //待删除节点左/右子树都不为空
+            //找到后继值节点[即待删除节点的右子树中的最小节点] 替换掉要删除的元素
+            Node successor = minnumByRecursive(node.right);
+            successor.right = removeMinByRecursive(node.right);
+            successor.left = node.left;
+
+            node.left = node.right = null;
+            return successor;
+        }
+    }
+
+    /**
+     * 删除节点中的任意元素：前驱值替换
+     * @param e
+     */
+    public void removeTo(E e){
+        root = removeToByRecursive(root, e);
+    }
+
+    private Node removeToByRecursive(Node node,E e){
+        if(node == null){
+            return null;
+        }
+        //删除左子树
+        if(e.compareTo((E) node.e) < 0){
+            node.left = removeToByRecursive(node.left, e);
+            return node;
+        }
+        //删除右子树
+        if(e.compareTo((E) node.e) > 0){
+            node.right = removeToByRecursive(node.right, e);
+            return node;
+        }
+        //删除当前元素
+        else {
+            //左子树为空的情况
+            if(node.left == null){
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+            //右子树为空的情况
+            if(node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+            //左右子树不为空的情况
+            Node successor = maxumnumByRecursive(node.left);
+            successor.left = removeMaxByRecursive(node.left);
+            successor.right = node.right;
+
+            node.left = node.right = null;
+            return successor;
+        }
     }
 
     @Override

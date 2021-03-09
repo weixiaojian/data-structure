@@ -34,23 +34,14 @@ public class Main {
         //Integer maxxum = b.maxxum();
         //System.out.println(minnum + "---" + maxxum);
 
-        Integer removeMin = b.removeMin();
-        System.out.println(removeMin);
+        //Integer removeMin = b.removeMin();
+        //System.out.println(removeMin);
 
-        removeMin = b.removeMin();
-        System.out.println(removeMin);
+        //Integer removeMax = b.removeMax();
+        //System.out.println(removeMax);
 
-        removeMin = b.removeMin();
-        System.out.println(removeMin);
-
-        removeMin = b.removeMin();
-        System.out.println(removeMin);
-
-        removeMin = b.removeMin();
-        System.out.println(removeMin);
-
-        removeMin = b.removeMin();
-        System.out.println(removeMin);
+        b.removeTo(8);
+        b.levelOrder();
 
     }
 
