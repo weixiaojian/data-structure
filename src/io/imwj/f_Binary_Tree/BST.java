@@ -76,7 +76,7 @@ public class BST<E extends Comparable<E>> {
         }
         if (e.compareTo((E) node.e) < 0) {
             node.left = addByRecursive(node.left, e);
-        } else {
+        } else if (e.compareTo((E) node.e) > 0){
             node.right = addByRecursive(node.right, e);
         }
         return node;
