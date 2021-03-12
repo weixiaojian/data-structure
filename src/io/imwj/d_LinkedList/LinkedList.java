@@ -141,8 +141,8 @@ public class LinkedList<E> {
      */
     public boolean contains(E e){
         Node cur = dummyHead.next;
-        while (cur != null){
-            if(cur.equals(e)){
+        while(cur != null){
+            if(cur.e.equals(e)){
                 return true;
             }
             cur = cur.next;
@@ -189,6 +189,28 @@ public class LinkedList<E> {
      */
     public E removeLast(){
         return remove(size -1);
+    }
+
+    /**
+     * 删除指定元素 然后返回链表集合
+     * @param e
+     * @return
+     */
+    public void removeElement(E e){
+        Node prev = dummyHead;
+        while(prev.next != null){
+            if(prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next;
+        }
+
+        if(prev.next != null){
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+            size --;
+        }
     }
 
     @Override
