@@ -22,6 +22,12 @@ public class Main {
         System.out.println(testSet(two, fileName));
     }
 
+    /**
+     * 测试集合
+     * @param set
+     * @param filename
+     * @return
+     */
     private static double testSet(Set<String> set, String filename){
 
         long startTime = System.nanoTime();

@@ -3,6 +3,7 @@ package io.imwj.g_Set_Map;
 import io.imwj.d_LinkedList.LinkedList;
 
 /**
+ * 基于链表实现的集合
  * @author langao_q
  * @since 2021-03-09 17:59
  */
