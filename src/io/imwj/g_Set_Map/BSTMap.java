@@ -193,10 +193,11 @@ public class BSTMap<K extends Comparable, V> implements Map<K, V>{
 
             BSTMap<String, Integer> map = new BSTMap<>();
             for (String word : words) {
-                if (map.contains(word))
+                if (map.contains(word)) {
                     map.set(word, map.get(word) + 1);
-                else
+                } else {
                     map.add(word, 1);
+                }
             }
 
             System.out.println("Total different words: " + map.getSize());
