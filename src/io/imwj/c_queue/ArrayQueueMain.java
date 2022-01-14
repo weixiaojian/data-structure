@@ -10,7 +10,7 @@ public class ArrayQueueMain {
         ArrayQueue<Integer> arrayQueue = new ArrayQueue();
         for (int i = 0; i < 10; i++) {
             arrayQueue.enqueue(i);
-            if(i%2 == 0){
+            if (i % 2 == 0) {
                 arrayQueue.dequeue();
             }
             System.out.println(arrayQueue);

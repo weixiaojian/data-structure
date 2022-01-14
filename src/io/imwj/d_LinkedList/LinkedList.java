@@ -72,23 +72,25 @@ public class LinkedList<E> {
         newNode.next = prev.next;
         prev.next = newNode;*/
         prev.next = new Node(e, prev.next);
-        size ++;
+        size++;
     }
 
     /**
      * 在链表末尾添加元素
+     *
      * @param e
      */
-    public void addLast(E e){
+    public void addLast(E e) {
         add(size, e);
     }
 
     /**
      * 获取指定位置的元素
+     *
      * @param index
      * @return
      */
-    public E get(int index){
+    public E get(int index) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. Illegal index.");
         }
@@ -102,27 +104,30 @@ public class LinkedList<E> {
 
     /**
      * 获取头节点的元素
+     *
      * @return
      */
-    public E getFirst(){
+    public E getFirst() {
         return get(0);
     }
 
     /**
      * 获取末尾节点的元素
+     *
      * @return
      */
-    public E getLast(){
+    public E getLast() {
         return get(size);
     }
 
     /**
      * 修改指定位置节点的元素值
      * 遍历元素
+     *
      * @param index
      * @param e
      */
-    public void set(int index, E e){
+    public void set(int index, E e) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. Illegal index.");
         }
@@ -136,13 +141,14 @@ public class LinkedList<E> {
 
     /**
      * 查看链表中是否有指定元素
+     *
      * @param e
      * @return
      */
-    public boolean contains(E e){
+    public boolean contains(E e) {
         Node cur = dummyHead.next;
-        while(cur != null){
-            if(cur.e.equals(e)){
+        while (cur != null) {
+            if (cur.e.equals(e)) {
                 return true;
             }
             cur = cur.next;
@@ -155,15 +161,16 @@ public class LinkedList<E> {
      * 1.获取删除节点的前一个节点prevNode
      * 2.prevNode.next指向delNode的next
      * 3.delNode指向null
+     *
      * @param index
      */
-    public E remove(int index){
+    public E remove(int index) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed. Illegal index.");
         }
         //遍历获取待删除元素的前一个节点
         Node prevNode = dummyHead;
-        for(int i=0; i< index; i++){
+        for (int i = 0; i < index; i++) {
             prevNode = prevNode.next;
         }
         //获取待删除元素
@@ -171,54 +178,57 @@ public class LinkedList<E> {
         //赋值
         prevNode.next = delNode.next;
         delNode.next = null;
-        size --;
-        return (E)delNode.e;
+        size--;
+        return (E) delNode.e;
     }
 
     /**
      * 删除头节点
+     *
      * @return
      */
-    public E removeFirst(){
+    public E removeFirst() {
         return remove(0);
     }
 
     /**
      * 删除末尾节点
+     *
      * @return
      */
-    public E removeLast(){
-        return remove(size -1);
+    public E removeLast() {
+        return remove(size - 1);
     }
 
     /**
      * 删除指定元素 然后返回链表集合
+     *
      * @param e
      * @return
      */
-    public void removeElement(E e){
+    public void removeElement(E e) {
         Node prev = dummyHead;
-        while(prev.next != null){
-            if(prev.next.e.equals(e)) {
+        while (prev.next != null) {
+            if (prev.next.e.equals(e)) {
                 break;
             }
             prev = prev.next;
         }
 
-        if(prev.next != null){
+        if (prev.next != null) {
             Node delNode = prev.next;
             prev.next = delNode.next;
             delNode.next = null;
-            size --;
+            size--;
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder str = new StringBuilder();
 
         Node cur = dummyHead.next;
-        while (cur != null){
+        while (cur != null) {
             str.append(cur + "->");
             cur = cur.next;
         }

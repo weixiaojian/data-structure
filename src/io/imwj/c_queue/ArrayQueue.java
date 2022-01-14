@@ -5,25 +5,27 @@ import io.imwj.a_array.Array;
 /**
  * 自定义数组队列的实现
  * 基于动态数组实现
+ *
  * @author LANGAO
  * @create 2020-05-20 15:35
  */
-public class ArrayQueue<E> implements Queue<E>{
+public class ArrayQueue<E> implements Queue<E> {
 
     private Array<E> array;
 
     /**
      * 自定义长度的
+     *
      * @param capacity
      */
-    public ArrayQueue(int capacity){
+    public ArrayQueue(int capacity) {
         array = new Array<>(capacity);
     }
 
     /**
      * 使用默认长度的
      */
-    public ArrayQueue(){
+    public ArrayQueue() {
         array = new Array<>();
     }
 
@@ -54,6 +56,6 @@ public class ArrayQueue<E> implements Queue<E>{
 
     @Override
     public String toString() {
-        return  "top<<< " + array + " <<<tail";
+        return "top<<< " + array + " <<<tail";
     }
 }

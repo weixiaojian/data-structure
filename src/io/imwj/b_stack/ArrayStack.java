@@ -6,6 +6,7 @@ import io.imwj.base.Stack;
 /**
  * 自定义栈的实现
  * 基于动态数组实现
+ *
  * @author LANGAO
  * @create 2020-05-20 11:26
  */
@@ -15,16 +16,17 @@ public class ArrayStack<E> implements Stack<E> {
 
     /**
      * 自定义长度的
+     *
      * @param capacity
      */
-    public ArrayStack(int capacity){
+    public ArrayStack(int capacity) {
         array = new Array<>(capacity);
     }
 
     /**
      * 使用默认长度的
      */
-    public ArrayStack(){
+    public ArrayStack() {
         array = new Array<>();
     }
 
@@ -55,14 +57,15 @@ public class ArrayStack<E> implements Stack<E> {
 
     /**
      * 获取栈的容量
+     *
      * @return
      */
-    public int getCapacity(){
+    public int getCapacity() {
         return array.getCapacity();
     }
 
     @Override
     public String toString() {
-        return  array + " >>> top ";
+        return array + " >>> top ";
     }
 }

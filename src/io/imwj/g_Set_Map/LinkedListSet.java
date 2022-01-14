@@ -4,20 +4,21 @@ import io.imwj.d_LinkedList.LinkedList;
 
 /**
  * 基于链表实现的集合
+ *
  * @author langao_q
  * @since 2021-03-09 17:59
  */
-public class LinkedListSet<E> implements Set<E>{
+public class LinkedListSet<E> implements Set<E> {
 
     private LinkedList list;
 
-    public LinkedListSet(){
+    public LinkedListSet() {
         list = new LinkedList();
     }
 
     @Override
     public void add(E e) {
-        if(!list.contains(e)){
+        if (!list.contains(e)) {
             list.addFirst(e);
         }
     }

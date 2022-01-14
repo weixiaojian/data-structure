@@ -2,6 +2,7 @@ package io.imwj.a_array;
 
 /**
  * 数组操作类
+ *
  * @author LANGAO
  * @create 2020-05-19 15:23
  */
@@ -17,7 +18,7 @@ public class ArrayMain {
         array.add(1, 10);
         System.out.println("add后" + array);
 
-        array.addFirst( -10);
+        array.addFirst(-10);
         System.out.println("addFirst后" + array);
 
         array.set(0, -1);
@@ -49,7 +50,7 @@ public class ArrayMain {
     /**
      * 数组初始化
      */
-    public void init(){
+    public void init() {
         int[] arr = new int[20];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;

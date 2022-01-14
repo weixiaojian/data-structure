@@ -6,6 +6,7 @@ import java.util.Arrays;
 /**
  * 自定义循环队列的实现
  * 基于动态数组实现
+ *
  * @author LANGAO
  * @create 2020-05-20 16:03
  */
@@ -22,10 +23,11 @@ public class LoopQueue<E> implements Queue<E> {
 
     /**
      * 有参数构造：指定长度的队列
+     *
      * @param capacity
      */
-    public LoopQueue(int capacity){
-        data = (E[]) new Object[capacity+1];
+    public LoopQueue(int capacity) {
+        data = (E[]) new Object[capacity + 1];
         front = 0;
         tail = 0;
         size = 0;
@@ -34,7 +36,7 @@ public class LoopQueue<E> implements Queue<E> {
     /**
      * 无参数构造
      */
-    public LoopQueue(){
+    public LoopQueue() {
         this(10);
     }
 
@@ -47,6 +49,7 @@ public class LoopQueue<E> implements Queue<E> {
     /**
      * 获取队列的容量
      * 循环队列会有意的浪费调一个节点 所以要减一
+     *
      * @return
      */
     public int getCapacity() {
@@ -55,6 +58,7 @@ public class LoopQueue<E> implements Queue<E> {
 
     /**
      * 当队首和队尾指针相同时 队列就为空了
+     *
      * @return
      */
     @Override
@@ -66,25 +70,25 @@ public class LoopQueue<E> implements Queue<E> {
     @Override
     public void enqueue(E e) {
         //当队尾+1 % 容量 == 队首时说明队列已经满了
-        if((tail + 1)%data.length == front){
+        if ((tail + 1) % data.length == front) {
             resize(getCapacity() * 2);
         }
         data[tail] = e;
         tail = (tail + 1) % data.length;
-        size ++;
+        size++;
     }
 
 
     @Override
     public E dequeue() {
-        if(isEmpty()){
+        if (isEmpty()) {
             throw new IllegalArgumentException("dequeue 出队失败 === 队列为空！");
         }
         E ret = data[front];
         data[front] = null;
         front = (front + 1) % data.length;
-        size --;
-        if(size == getCapacity()/4 && getCapacity()/2 != 0){
+        size--;
+        if (size == getCapacity() / 4 && getCapacity() / 2 != 0) {
             resize(getCapacity() / 2);
         }
         return ret;
@@ -92,7 +96,7 @@ public class LoopQueue<E> implements Queue<E> {
 
     @Override
     public E getFront() {
-        if(isEmpty()){
+        if (isEmpty()) {
             throw new IllegalArgumentException("dequeue 出队失败 === 队列为空！");
         }
         return data[front];
@@ -103,12 +107,13 @@ public class LoopQueue<E> implements Queue<E> {
      * 注意：队列数组中我们有意识的浪费了一个节点
      * 队尾的指针可能指向index为2的位置，所以迁移元素的时候要注意，同时还要考虑数组越界的问题
      * resize以后队首指向index为0的位置，队尾指向size位置
+     *
      * @param newCapacity
      */
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity + 1];
         for (int i = 0; i < size; i++) {
-            newData[i] = data[(front + i)%data.length];
+            newData[i] = data[(front + i) % data.length];
         }
         data = newData;
         front = 0;
